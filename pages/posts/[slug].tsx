@@ -45,7 +45,7 @@ const Post = ({post}:any) => {
       ))}
       <div className="mt-10 font-medium">
         <ReactMarkdown components={{
-            code({node, inline, className, children, ...props}) {
+            code({node, inline, className, children,}) {
               const match = /language-(\w+)/.exec(className || '')
                 return !inline && match ? (
                   <SyntaxHighlighter
@@ -53,10 +53,9 @@ const Post = ({post}:any) => {
                     style={dark}
                     language={match[1]}
                     PreTag="div"
-                    {...props}
                   />
                 ) : (
-                  <code {...props} className={className}>
+                  <code>
                     {children}
                   </code>
                 )
