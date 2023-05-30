@@ -30,7 +30,7 @@ export const getStaticProps = async (context:any) => {
       numberOfPage,
       allTags,
     },
-    revalidate:60,
+    revalidate:10,
   }
 }
 
